@@ -2,6 +2,7 @@
 .thirteen {
   position: relative;
 }
+body { font-family: "Poppins", sans-serif; }
 @media (prefers-color-scheme: dark) {
     .vercelLogo {
       filter: invert(1);

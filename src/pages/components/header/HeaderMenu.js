@@ -1,24 +1,27 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import {Box, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar} from '@mui/material';
 import Link from 'next/link';
-import { useRouter } from 'next/router'
-
+import {makeStyles} from '@mui/styles';
 const drawerWidth = 240;
 const navItems = ['home', 'about', 'Services', 'Articles', 'Videos', 'Contact'];
+
+const useStyles = makeStyles({
+  menuWrapper:{
+    width:'100%',
+    '& .menuItem':{
+      width:'100%',
+      textAlign:'right',
+      '& ul':{
+        listStyle:'none',
+        '& li':{
+          display:'inline-block',
+          padding:'0 10px'
+        }
+      }
+    }
+  }
+})
 
 function HeaderMenu(props) {
   const { window } = props;
@@ -29,54 +32,45 @@ function HeaderMenu(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Logo Msite
-      </Typography>
-      <Divider />
+    <div onClick={handleDrawerToggle} sx={{ textAlign: 'right' }}>
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton sx={{ textAlign: 'left' }}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
-    </Box>
+    </div>
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
-
+  const classes = useStyles();
   return (
-    <Box sx={{ display: 'flex', margin:'0' }}>
-      <AppBar component="nav" style={{border:'1px solid red'}}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            Logo Website
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+    <>
+      <Toolbar className={classes.menuWrapper}>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          edge="start"
+          onClick={handleDrawerToggle}
+          sx={{ mr: 2, display: { sm: 'none' } }}
+        >
+          ==
+        </IconButton>
+        <Box className='menuItem' sx={{ display: { xs: 'none', sm: 'block'} }}>
+          <ul>
             {navItems.map((item) => (
-              <Link  href={`/${item}`} key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Link>
+              <li style={{}}>
+                <Link href={`/${item}`} key={item} sx={{ color: '#fff' }}>
+                  {item}
+                </Link>
+              </li>
             ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
+          </ul>
+        </Box>
+      </Toolbar>
       <Box component="nav">
         <Drawer
           container={container}
@@ -94,8 +88,7 @@ function HeaderMenu(props) {
           {drawer}
         </Drawer>
       </Box>
-      
-    </Box>
+    </>
   );
 }
 
