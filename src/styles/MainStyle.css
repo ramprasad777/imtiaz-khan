@@ -1,0 +1,14 @@
+body { font-family: "Poppins", sans-serif; }
+.main-header-wrapper{
+    background-color: #fff;
+}
+
+@media (max-width: 600px){
+    .menu-icon{
+        color:#000;
+    }
+    .header-inside-wrapper{
+        flex-direction: row-reverse;
+        justify-content: start;
+    }
+}

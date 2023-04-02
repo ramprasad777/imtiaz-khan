@@ -8,9 +8,9 @@ import HeaderMenu from './HeaderMenu';
 
 function Header(){
     return(
-        <AppBar component="nav" style={{border:'1px solid red',}}>
+        <AppBar component="nav" className='main-header-wrapper'>
             <Container>
-                <Box sx={{ display: 'flex', margin:'0', flexDirection:'row', justifyContent:'space-between', alignItems:'center' }}>
+                <Box className='header-inside-wrapper' sx={{ display: 'flex', margin:'0', flexDirection:'row', justifyContent:'space-between', alignItems:'center' }}>
                     <Logo styles="" logo={`logo`} />
                     <HeaderMenu /> 
                 </Box>

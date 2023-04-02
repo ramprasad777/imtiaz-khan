@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import {Box, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar} from '@mui/material';
 import Link from 'next/link';
 import {makeStyles} from '@mui/styles';
+import MenuIcon from '@mui/icons-material/Menu';
 const drawerWidth = 240;
 const navItems = ['home', 'about', 'Services', 'Articles', 'Videos', 'Contact'];
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( (theme) =>({
   menuWrapper:{
     width:'100%',
     '& .menuItem':{
@@ -16,12 +17,27 @@ const useStyles = makeStyles({
         listStyle:'none',
         '& li':{
           display:'inline-block',
-          padding:'0 10px'
+          padding:'0 10px',
+          textTransform:'capitalize',
+          fontSize:'16px',
+        },
+        '& a':{
+          color:'#30343E',
+          textDecoration:'none',
+        },
+        '& a:hover':{
+          color:'#000',
+          textDecoration:'underline'
         }
       }
-    }
-  }
-})
+    },
+  },
+  // [theme.breakpoints.down('md')]: {
+  //   '& .menu-icon':{
+  //     color:'red'
+  //   }
+  // },
+}));
 
 function HeaderMenu(props) {
   const { window } = props;
@@ -37,7 +53,9 @@ function HeaderMenu(props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'left' }}>
-              <ListItemText primary={item} />
+              <Link href={`/${item}`} key={item} sx={{ color: '#fff' }}>
+                <ListItemText primary={item} />
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -57,12 +75,12 @@ function HeaderMenu(props) {
           onClick={handleDrawerToggle}
           sx={{ mr: 2, display: { sm: 'none' } }}
         >
-          ==
+          <MenuIcon className='menu-icon' />
         </IconButton>
         <Box className='menuItem' sx={{ display: { xs: 'none', sm: 'block'} }}>
-          <ul>
+          <ul style={{listStyle:'none'}}>
             {navItems.map((item) => (
-              <li style={{}}>
+              <li style={{display:'inline-block'}}>
                 <Link href={`/${item}`} key={item} sx={{ color: '#fff' }}>
                   {item}
                 </Link>
