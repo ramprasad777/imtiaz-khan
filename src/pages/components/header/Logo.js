@@ -6,8 +6,8 @@ function Logo(props){
         <div>
           <Image
             className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
+            src="/images/imtiyaz-khan-logo.png"
+            alt="Imtiyaz Khan"
             width={180}
             height={37}
             priority
