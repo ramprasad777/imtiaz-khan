@@ -40,7 +40,7 @@ function AboutSection(){
                         </Grid>
                         <Grid item xs={6}>
                             <div className='content'>
-                                <Heading heading="About" heading2="Me" start="true" />
+                                <Heading heading="About" heading2="Me" start="true" variant="h2" component="h2" textAlign="left" />
                                 <p>
                                     A writer, a thought leader, strategic thinker and a software professional having 16 years of experience in software development. A technology leader and start up lover, having 11 years solid working experience in start ups. Having a good understanding of life, career and universe. How to solve the life and human problems by automating them by simple ways. Understand the people, programming, technologies and how to use them to solve problems. Love to serve people by coaching, mentoring, writing and consulting.
                                 </p>

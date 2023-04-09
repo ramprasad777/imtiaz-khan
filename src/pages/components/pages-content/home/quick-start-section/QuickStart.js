@@ -1,10 +1,10 @@
 import Container from '@mui/material/Container';
 import { makeStyles } from '@mui/styles';
-import {Box, Grid} from '@mui/material';
+import {Box, Grid, Typography} from '@mui/material';
 import Image from 'next/image'
-import Link from 'next/link'
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Heading from '../../../shared/Heading';
+import ListDiscripton from './ListDescription';
+
 const useStyles = makeStyles({
     mainAboutWrapper: {
         background:`url('/images/home/about/circle-mask.png') no-repeat right center #000`,
@@ -40,26 +40,15 @@ function QuickStart(){
                         </Grid>
                         <Grid item xs={6}>
                             <div className='content'>
-                                <Heading heading="EXPERT" heading2="from a QUICK START to become an" />
-                                <p>
-                                    A writer, a thought leader, strategic thinker and a software professional having 16 years of experience in software development. A technology leader and start up lover, having 11 years solid working experience in start ups. Having a good understanding of life, career and universe. How to solve the life and human problems by automating them by simple ways. Understand the people, programming, technologies and how to use them to solve problems. Love to serve people by coaching, mentoring, writing and consulting.
-                                </p>
-                                <Link href={`/about`}>
-                                    Know More <ChevronRightIcon />
-                                </Link>
-                            </div>
-                            <div>
-                                <Image
-                                    className=""
-                                    src="/images/home/about/triangle-mask.png"
-                                    alt="about traingle"
-                                    width='135'
-                                    height='118'
-                                    priority
-                                />
+                                <Heading heading="EXPERT" heading2="from a QUICK START to become an" start="false" />
+                                <ListDiscripton />
                             </div>
                         </Grid>
                     </Grid>
+                </Box>
+                <Box>
+                    <Heading heading="Trust Me You Are On A Right Place" colorHeading="blue" variant="h2" component="h2" textAlign="center" />
+                    <Heading heading="I Help People In All Areas Of Their Career, Life And Businesses. I Am Happy To Assist You..." variant="h3" component="h3" textAlign="center" />
                 </Box>
             </Container>
         </div>
