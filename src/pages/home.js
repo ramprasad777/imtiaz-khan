@@ -5,6 +5,7 @@ import MainBanner from './components/pages-content/home/MainBanner';
 import { makeStyles } from '@mui/styles';
 import AboutSection from './components/pages-content/home/about-section/AboutSection';
 import QuickStart from './components/pages-content/home/quick-start-section/QuickStart';
+import HappyToServe from './components/pages-content/home/happy-to-serve/HappyToServe';
 const useStyles = makeStyles({
     mainWrapper: {
         position:'relative',
@@ -20,6 +21,7 @@ function Home(){
                 <MainBanner />
                 <AboutSection />
                 <QuickStart />
+                <HappyToServe />
             </Box>
         </Layout>
     )

@@ -1,14 +1,12 @@
-import Container from '@mui/material/Container';
 import { makeStyles } from '@mui/styles';
-import {Box, Grid, Typography} from '@mui/material';
+import {Container, Box, Grid} from '@mui/material';
 import Image from 'next/image'
 import Heading from '../../../shared/Heading';
 import ListDiscripton from './ListDescription';
 
 const useStyles = makeStyles({
-    mainAboutWrapper: {
-        background:`url('/images/home/about/circle-mask.png') no-repeat right center #000`,
-        backgroundSize:'contain',
+    mainQuickStartWrapper: {
+        backgroundColor:'#000',
         color:'#fff',
         '& .contentWrapper':{
             display:'flex',
@@ -22,11 +20,11 @@ const useStyles = makeStyles({
 function QuickStart(){
     const classes = useStyles();
     return(
-        <div className={classes.mainAboutWrapper}>
+        <div className={classes.mainQuickStartWrapper}>
             <Container maxWidth="lg">
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={2} className='contentWrapper'>
-                        <Grid item xs={4}>
+                        <Grid item xs={12} sm={4} order={{ xs: 2, sm:1}}>
                             <Image
                                 className=""
                                 src="/images/home/about/about-me.png"
@@ -38,7 +36,7 @@ function QuickStart(){
                                 priority
                             />
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item xs={12} sm={6} order={{ xs: 1, sm:2}}>
                             <div className='content'>
                                 <Heading heading="EXPERT" heading2="from a QUICK START to become an" start="false" />
                                 <ListDiscripton />

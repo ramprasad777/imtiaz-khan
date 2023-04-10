@@ -26,7 +26,7 @@ function AboutSection(){
             <Container maxWidth="lg">
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={2} className='contentWrapper'>
-                        <Grid item xs={4}>
+                        <Grid item xs={12} sm={4} order={{ xs: 2, sm:1}}>
                             <Image
                                 className=""
                                 src="/images/home/about/about-me.png"
@@ -38,7 +38,7 @@ function AboutSection(){
                                 priority
                             />
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item xs={12} sm={6} order={{ xs: 1, sm:2 }}>
                             <div className='content'>
                                 <Heading heading="About" heading2="Me" start="true" variant="h2" component="h2" textAlign="left" />
                                 <p>
