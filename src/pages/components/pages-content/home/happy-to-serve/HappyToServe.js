@@ -1,7 +1,9 @@
 import { makeStyles } from '@mui/styles';
 import {Container, Box, Grid, Typography} from '@mui/material';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Heading from '../../../shared/Heading';
 import Image from 'next/image'
+import Link from 'next/link';
 
 const useStyles = makeStyles({
     happyToServeWrapper: {
@@ -32,7 +34,7 @@ const useStyles = makeStyles({
                     backgroundColor:'#3BA5E0',
                     color:'#fff',
                     '& img':{
-                        filter: 'invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)',
+                        filter: 'invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)'
                     }
                 }
             },
@@ -106,6 +108,11 @@ function HappyToServe(){
                         })
                     }
                 </Grid>
+                <Typography variant="p" mt={3} component="p" align='center'>
+                    <Link href={`/services`}>
+                        View More Services <ChevronRightIcon />
+                    </Link>
+                </Typography>
             </Container>
         </div>
     )
