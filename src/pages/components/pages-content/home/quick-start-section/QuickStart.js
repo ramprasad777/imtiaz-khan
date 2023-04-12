@@ -22,7 +22,7 @@ function QuickStart(){
     return(
         <div className={classes.mainQuickStartWrapper}>
             <Container maxWidth="lg">
-                <Box sx={{ flexGrow: 1 }}>
+                <Box sx={{ flexGrow: 1 }} pt={5} pb={5}>
                     <Grid container spacing={2} className='contentWrapper'>
                         <Grid item xs={12} sm={4} order={{ xs: 2, sm:1}}>
                             <Image

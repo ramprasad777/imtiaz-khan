@@ -6,6 +6,8 @@ import { makeStyles } from '@mui/styles';
 import AboutSection from './components/pages-content/home/about-section/AboutSection';
 import QuickStart from './components/pages-content/home/quick-start-section/QuickStart';
 import HappyToServe from './components/pages-content/home/happy-to-serve/HappyToServe';
+import MyThaughts from './components/pages-content/home/my-thaughts/MyThaughts';
+import RecordedThaughts from './components/pages-content/home/my-thaughts/RecordedThaughts';
 const useStyles = makeStyles({
     mainWrapper: {
         position:'relative',
@@ -22,6 +24,8 @@ function Home(){
                 <AboutSection />
                 <QuickStart />
                 <HappyToServe />
+                <MyThaughts />
+                <RecordedThaughts />
             </Box>
         </Layout>
     )

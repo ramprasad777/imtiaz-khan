@@ -80,39 +80,41 @@ function HappyToServe(){
     return(
         <div className={classes.happyToServeWrapper}>
             <Container maxWidth="lg">
-                <Heading heading2="I am Happy to" heading="Serve You" textAlign="center" start="false" />
-                <Typography variant="p" mt={2} component="p" align='center'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br /> Lorem Ipsum has been the industry's standard dummy
-                </Typography>
-                <Grid container spacing={2} mt={2} className='servicesWrapper'>
-                    {
-                        servicesData.map((data, i)=>{
-                            return(
-                                <Grid item xs={6} sm={3} mt={2} key={i}>
-                                    <div className='servicesBlock'>
-                                        <div>
-                                            <Image
-                                                className=""
-                                                src={data.icon}
-                                                alt="Main Banner"
-                                                width={70}
-                                                height={70}
-                                            />
-                                            <Typography variant="p" mt={2} component="p" align='center'>
-                                                {data.content}
-                                            </Typography>
+                <Box pt={5} pb={5}>
+                    <Heading heading2="I am Happy to" heading="Serve You" textAlign="center" start="false" />
+                    <Typography variant="p" mt={2} component="p" align='center'>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br /> Lorem Ipsum has been the industry's standard dummy
+                    </Typography>
+                    <Grid container spacing={2} mt={2} className='servicesWrapper'>
+                        {
+                            servicesData.map((data, i)=>{
+                                return(
+                                    <Grid item xs={6} sm={3} mt={2} key={i}>
+                                        <div className='servicesBlock'>
+                                            <div>
+                                                <Image
+                                                    className=""
+                                                    src={data.icon}
+                                                    alt="Main Banner"
+                                                    width={70}
+                                                    height={70}
+                                                />
+                                                <Typography variant="p" mt={2} component="p" align='center'>
+                                                    {data.content}
+                                                </Typography>
+                                            </div>
                                         </div>
-                                    </div>
-                                </Grid>
-                            )
-                        })
-                    }
-                </Grid>
-                <Typography variant="p" mt={3} component="p" align='center'>
-                    <Link href={`/services`}>
-                        View More Services <ChevronRightIcon />
-                    </Link>
-                </Typography>
+                                    </Grid>
+                                )
+                            })
+                        }
+                    </Grid>
+                    <Typography variant="p" mt={3} component="p" align='center'>
+                        <Link href={`/services`}>
+                            View More Services <ChevronRightIcon />
+                        </Link>
+                    </Typography>
+                </Box>
             </Container>
         </div>
     )
