@@ -1,6 +1,7 @@
 import { makeStyles } from '@mui/styles';
 import {Container, Box, Grid, Typography} from '@mui/material';
 import Heading from '../../../shared/Heading';
+import ThaughtsCarousel from './ThaughtsCarousel';
 const useStyles = makeStyles({
     recordedThaughtsWrapper:{
         background:'#000',
@@ -18,6 +19,7 @@ const RecordedThaughts = () =>{
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
                     </Typography>
                 </Box>
+                <ThaughtsCarousel />
             </Container>
         </div>
     )

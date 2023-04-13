@@ -1,0 +1,31 @@
+.slider-wrapper{
+    display:flex;
+    align-items:flex-start;
+}
+.slick-slider{
+    width:60%;
+    display: inline-block;
+}
+.thumbnail-slider-wrap{
+    height: 85px;
+    width:25%;
+    margin-left:20px;
+    display: inline-block;
+}
+.thumbnail-slider-wrap .slick-track .slick-slide {
+    text-align: center;
+}
+.thumbnail-slider-wrap .slick-track .slick-slide img {
+    width: 100%;
+}
+@media(max-width:767px){
+    .slider-wrapper{
+        flex-wrap: wrap;
+    }
+    .slick-slider{
+        width: 100%;
+    }
+    .thumbnail-slider-wrap{
+        width:100%;
+    }
+}

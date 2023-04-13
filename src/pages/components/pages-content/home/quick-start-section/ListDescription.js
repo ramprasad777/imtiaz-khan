@@ -94,7 +94,7 @@ function ListDiscripton(){
                 {
                     listData.map((data, key)=>{
                         return(
-                            <Grid item xs={4} sm={6} key={key} className='listItem'>
+                            <Grid item xs={6} sm={6} key={key} className='listItem'>
                                 <span className='checkIcon'>
                                     <CheckIcon />
                                 </span>
