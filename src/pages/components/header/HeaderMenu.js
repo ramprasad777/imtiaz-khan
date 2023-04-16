@@ -5,7 +5,8 @@ import Link from 'next/link';
 import {makeStyles} from '@mui/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 const drawerWidth = 240;
-const navItems = ['home', 'about', 'Services', 'Articles', 'Videos', 'Contact'];
+const navItems = ['home', 'about', 'services', 'articles', 'videos', 'contact'];
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles( (theme) =>({
   menuWrapper:{
@@ -20,6 +21,9 @@ const useStyles = makeStyles( (theme) =>({
           padding:'0 10px',
           textTransform:'capitalize',
           fontSize:'16px',
+        },
+        '& li.active a':{
+          color: '#62ADEC'
         },
         '& a':{
           color:'#30343E',
@@ -42,7 +46,7 @@ const useStyles = makeStyles( (theme) =>({
 function HeaderMenu(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const router = useRouter();
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -51,7 +55,7 @@ function HeaderMenu(props) {
     <div onClick={handleDrawerToggle} sx={{ textAlign: 'right' }}>
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item} className={router.pathname == `/${item}` ? "active" : ""} disablePadding>
             <ListItemButton sx={{ textAlign: 'left' }}>
               <Link href={`/${item}`} key={item} sx={{ color: '#fff' }}>
                 <ListItemText primary={item} />
@@ -80,7 +84,7 @@ function HeaderMenu(props) {
         <Box className='menuItem' sx={{ display: { xs: 'none', sm: 'block'} }}>
           <ul style={{listStyle:'none'}}>
             {navItems.map((item) => (
-              <li style={{display:'inline-block'}}>
+              <li style={{display:'inline-block'}} className={router.pathname == `/${item}` ? "active" : ""}>
                 <Link href={`/${item}`} key={item} sx={{ color: '#fff' }}>
                   {item}
                 </Link>

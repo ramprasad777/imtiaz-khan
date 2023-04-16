@@ -5,6 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Heading from '../../../shared/Heading';
+import { useRouter } from "next/router";
+
 const useStyles = makeStyles({
     mainAboutWrapper: {
         background:`url('/images/home/about/circle-mask.png') no-repeat right center #000`,
@@ -21,6 +23,7 @@ const useStyles = makeStyles({
 });
 function AboutSection(){
     const classes = useStyles();
+    const router = useRouter();
     return(
         <div className={classes.mainAboutWrapper}>
             <Container maxWidth="lg">
@@ -44,9 +47,14 @@ function AboutSection(){
                                 <p>
                                     A writer, a thought leader, strategic thinker and a software professional having 16 years of experience in software development. A technology leader and start up lover, having 11 years solid working experience in start ups. Having a good understanding of life, career and universe. How to solve the life and human problems by automating them by simple ways. Understand the people, programming, technologies and how to use them to solve problems. Love to serve people by coaching, mentoring, writing and consulting.
                                 </p>
-                                <Link href={`/about`}>
-                                    Know More <ChevronRightIcon />
-                                </Link>
+                                {
+                                    router.pathname != `/about` ?
+                                    <Link href={`/about`}>
+                                        Know More <ChevronRightIcon />
+                                    </Link>
+                                    :
+                                    ''
+                                }
                             </div>
                             <div>
                                 <Image

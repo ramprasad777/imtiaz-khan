@@ -4,6 +4,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Heading from '../../../shared/Heading';
 import Image from 'next/image'
 import Link from 'next/link';
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles({
     happyToServeWrapper: {
@@ -77,14 +78,22 @@ const servicesData = [
 ]
 function HappyToServe(){
     const classes = useStyles();
+    const router = useRouter();
     return(
         <div className={classes.happyToServeWrapper}>
             <Container maxWidth="lg">
                 <Box pt={5} pb={5}>
-                    <Heading heading2="I am Happy to" heading="Serve You" textAlign="center" start="false" />
-                    <Typography variant="p" mt={2} component="p" align='center'>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br /> Lorem Ipsum has been the industry's standard dummy
-                    </Typography>
+                    {
+                        router.pathname != `/services` ?
+                        <>
+                            <Heading heading2="I am Happy to" heading="Serve You" textAlign="center" start="false" />
+                            <Typography variant="p" mt={2} component="p" align='center'>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br /> Lorem Ipsum has been the industry's standard dummy
+                            </Typography>
+                        </>
+                        :
+                        ''
+                    }
                     <Grid container spacing={2} mt={2} className='servicesWrapper'>
                         {
                             servicesData.map((data, i)=>{
@@ -109,11 +118,16 @@ function HappyToServe(){
                             })
                         }
                     </Grid>
-                    <Typography variant="p" mt={3} component="p" align='center'>
-                        <Link href={`/services`}>
-                            View More Services <ChevronRightIcon />
-                        </Link>
-                    </Typography>
+                    {
+                        router.pathname != `/services` ?
+                        <Typography variant="p" mt={3} component="p" align='center'>
+                            <Link href={`/services`}>
+                                View More Services <ChevronRightIcon />
+                            </Link>
+                        </Typography>
+                        :
+                        ''
+                    }
                 </Box>
             </Container>
         </div>
