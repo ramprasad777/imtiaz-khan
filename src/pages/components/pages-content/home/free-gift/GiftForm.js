@@ -22,12 +22,15 @@ const useStyle = makeStyles((theme) => ({
         // padding: theme.spacing(3),
         padding:'24px',
         '& .input-field':{
-            border:'1px solid #155E8B',
-            borderRadius:'5px',
+            marginBottom:'10px',
             '& label':{
                 color:'#A2ADBD',
+                background:'#061823',
+                padding:'0 5px'
             },
             '& input':{
+                border:'1px solid #155E8B',
+                borderRadius:'5px',
                 color:'#fff'
             }
         }
@@ -37,7 +40,11 @@ const useStyle = makeStyles((theme) => ({
         margin:'8px',
         background:'#62ADEC',
         color:'#fff',
-        borderRadius:'5px'
+        borderRadius:'5px',
+        '&.Mui-disabled':{
+            background:'#9cbad4',
+            color:'#fff'
+        }
     },
 }))
 
@@ -109,7 +116,7 @@ const GiftForm = () => {
                             component={TextField}
                             />
                         </Grid>
-                        <Grid item xs={12} md={12}>
+                        {/* <Grid item xs={12} md={12}>
                             <FormControl fullWidth variant="outlined">
                             <InputLabel id="demo-simple-select-outlined-label">
                                 Occupation
@@ -131,7 +138,7 @@ const GiftForm = () => {
                                 ))}
                             </Select>
                             </FormControl>
-                        </Grid>
+                        </Grid> */}
                         <Grid item xs={12} md={12}>
                             <Field
                             label="Email"
