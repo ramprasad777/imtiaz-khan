@@ -8,6 +8,8 @@ import QuickStart from './components/pages-content/home/quick-start-section/Quic
 import HappyToServe from './components/pages-content/home/happy-to-serve/HappyToServe';
 import MyThaughts from './components/pages-content/home/my-thaughts/MyThaughts';
 import RecordedThaughts from './components/pages-content/home/my-thaughts/RecordedThaughts';
+import FreeGift from './components/pages-content/home/free-gift/FreeGift';
+import PeopleExperience from './components/pages-content/home/people-experience/PeopleExperience';
 const useStyles = makeStyles({
     mainWrapper: {
         position:'relative',
@@ -26,6 +28,8 @@ function Home(){
                 <HappyToServe />
                 <MyThaughts />
                 <RecordedThaughts />
+                <FreeGift />
+                <PeopleExperience />
             </Box>
         </Layout>
     )

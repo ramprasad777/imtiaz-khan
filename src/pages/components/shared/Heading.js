@@ -23,7 +23,7 @@ const useStyles = makeStyles({
 });
 
 function Heading(props){
-    const {heading, heading2, start, colorHeading, textAlign, variant, component} = props
+    const {heading, heading2, heading3, start, colorHeading, textAlign, variant, component} = props
     const classes = useStyles();
     return(
         <Typography className={classes.mainHeading} align={textAlign} start={start} variant={variant} component={component}>
@@ -36,6 +36,9 @@ function Heading(props){
                 :
                 start === 'false' ? 
                 <>{heading2} <span className='headingBordered'>{heading}</span></>
+                :
+                start === 'center' ? 
+                <>{heading2} <span className='headingBordered'>{heading}</span> {heading3}</>
                 :
                 <span className='subHeading'>{heading}</span>
             }

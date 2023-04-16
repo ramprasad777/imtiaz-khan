@@ -43,28 +43,28 @@ const ThaughtsCarousel = () =>{
     const slidesData = [
         {
           id: 1,
-          title: 'repellendus id ullam',
-          label: 'Dolorem officiis temporibus.'
+          title: '6 Types of Health | Importance of Health in Life and Career',
+          label: 'Feb 14, 2023 | 150K Views'
         }, {
           id: 2,
           title: 'excepturi consequatur est',
-          label: 'Officia non provident dolor esse et neque.'
+          label: 'Feb 14, 2023 | 150K Views'
         }, {
           id: 3,
           title: 'eius doloribus blanditiis',
-          label: 'Ut recusandae vel vitae molestiae id soluta.'
+          label: 'Feb 14, 2023 | 150K Views'
         }, {
           id: 4,
           title: 'nihil voluptates delectus',
-          label: 'Qui vel consequatur recusandae illo repellendus.'
+          label: 'Feb 14, 2023 | 150K Views'
         }, {
           id: 5,
           title: 'nemo dolorem necessitatibus',
-          label: 'Placeat odit velit itaque voluptatem.'
+          label: 'Feb 14, 2023 | 150K Views'
         }, {
           id: 6,
           title: 'dolorem quibusdam quasi',
-          label: 'Adipisci officiis repudiandae.'
+          label: 'Feb 14, 2023 | 150K Views'
         },
     ];
     return(
