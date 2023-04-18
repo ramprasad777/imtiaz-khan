@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Box } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 
 const ThaughtsCarousel = () =>{
     const [nav1, setNav1] = useState(null);
@@ -17,7 +17,7 @@ const ThaughtsCarousel = () =>{
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
-        fade: true,
+        infinite: true,
         asNavFor: '.slider-nav',
     };
     const settingsThumbs = {
@@ -43,26 +43,32 @@ const ThaughtsCarousel = () =>{
     const slidesData = [
         {
           id: 1,
+          videoId: '3zqzYB97WC0',
           title: '6 Types of Health | Importance of Health in Life and Career',
           label: 'Feb 14, 2023 | 150K Views'
         }, {
           id: 2,
+          videoId: 'i0ZHTiDTS30',
           title: 'excepturi consequatur est',
           label: 'Feb 14, 2023 | 150K Views'
         }, {
           id: 3,
+          videoId: 'shz8Uxo4gJw',
           title: 'eius doloribus blanditiis',
           label: 'Feb 14, 2023 | 150K Views'
         }, {
           id: 4,
+          videoId: '3zqzYB97WC0',
           title: 'nihil voluptates delectus',
           label: 'Feb 14, 2023 | 150K Views'
         }, {
           id: 5,
+          videoId: 'O_87fhb4gV8',
           title: 'nemo dolorem necessitatibus',
           label: 'Feb 14, 2023 | 150K Views'
         }, {
           id: 6,
+          videoId: 'jntD0OY-zK8',
           title: 'dolorem quibusdam quasi',
           label: 'Feb 14, 2023 | 150K Views'
         },
@@ -80,9 +86,12 @@ const ThaughtsCarousel = () =>{
                         {slidesData.map((slide) =>
 
                             <div className="slick-slide" key={slide.id}>
-                                <img className="slick-slide-image" src={`https://picsum.photos/800/400?img=${slide.id}`} />
-                                <h2 className="slick-slide-title">{slide.title}</h2>
-                                <label className="slick-slide-label">{slide.label}</label>
+                                {/* <img className="slick-slide-image" src={`https://picsum.photos/800/400?img=${slide.id}`} /> */}
+                                <div>
+                                    <iframe width="560" height="315" src={`https://www.youtube.com/embed/${slide.videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <h2 className="slick-slide-title">{slide.title}</h2>
+                                    <label className="slick-slide-label">{slide.label}</label>
+                                </div>
                             </div>
                         )}
                     </Slider>
@@ -93,7 +102,15 @@ const ThaughtsCarousel = () =>{
                             ref={slider => (setSlider2(slider))}>
                             {slidesData.map((slide) =>
                             <div className="slick-slide" key={slide.id}>
-                                <img className="slick-slide-image" src={`https://picsum.photos/800/400?img=${slide.id}`} />
+                                <Grid container className='contentWrapper'>
+                                    <Grid item xs={12} sm={5} className="image-block">
+                                        <img className="slick-slide-image" src={`https://picsum.photos/800/400?img=${slide.id}`} />
+                                    </Grid>
+                                    <Grid item xs={12} sm={7} className="content-block">
+                                        <h2 className="slick-slide-title">{slide.title}</h2>
+                                        <label className="slick-slide-label">{slide.label}</label>
+                                    </Grid>
+                                </Grid>
                             </div>
                             )}
                         </Slider>
