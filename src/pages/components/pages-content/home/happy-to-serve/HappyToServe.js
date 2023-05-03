@@ -29,13 +29,14 @@ const useStyles = makeStyles({
                 '& img':{
                     width:'70px',
                     height:'auto',
-                    maxHeight:'70px'
+                    maxHeight:'70px',
+                    filter: 'invert(0.4) sepia(1) saturate(20) hue-rotate(187.2deg) brightness(1.2)'
                 },
                 '&:hover':{
-                    backgroundColor:'#3BA5E0',
+                    background:'#3BA5E0!important',
                     color:'#fff',
                     '& img':{
-                        filter: 'invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)'
+                        filter: 'invert(72%) sepia(30%) saturate(6808%) hue-rotate(-73deg) brightness(9%) contrast(84%)'
                     }
                 }
             },

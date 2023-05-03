@@ -44,10 +44,18 @@ function QuickStart(){
                         </Grid>
                     </Grid>
                 </Box>
-                <Box>
-                    <Heading heading="Trust Me You Are On A Right Place" colorHeading="blue" variant="h2" component="h2" textAlign="center" />
-                    <Heading heading="I Help People In All Areas Of Their Career, Life And Businesses. I Am Happy To Assist You..." variant="h3" component="h3" textAlign="center" />
-                </Box>
+                <Grid
+                    container
+                    spacing={0}
+                    direction="column"
+                    alignItems="center"
+                    justify="center"
+                >
+                    <Grid xs={12} sm={10}>
+                        <Heading heading="Trust Me You Are On A Right Place" colorHeading="blue" variant="h2" component="h2" textAlign="center" />
+                        <Heading heading="I Help People In All Areas Of Their Career, Life And Businesses. I Am Happy To Assist You..." variant="h3" component="h3" textAlign="center" />
+                    </Grid>
+                </Grid>
             </Container>
         </div>
     )

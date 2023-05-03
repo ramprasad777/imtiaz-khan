@@ -8,6 +8,9 @@ const useStyles = makeStyles({
         background: 'url(/images/home/dotted-bg.svg) no-repeat left center #000',
         backgroundSize: 'auto',
         color:'#fff',
+        '& .playIcon':{
+            color:'#055E91'
+        }
     }
 })
 const MyThaughts = () =>{
@@ -24,7 +27,7 @@ const MyThaughts = () =>{
                             <Typography variant="p" mt={2} component="p" align='left'>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
                             </Typography>
-                            <Typography variant="p" mt={2} component="p" align='left'>
+                            <Typography variant="p" mt={2} component="p" align='left' className='playIcon'>
                                 <PlayArrowIcon /><PlayArrowIcon /><PlayArrowIcon /><PlayArrowIcon /><PlayArrowIcon />
                             </Typography>
                         </Grid>

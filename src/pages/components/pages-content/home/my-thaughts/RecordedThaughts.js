@@ -12,15 +12,27 @@ const RecordedThaughts = () =>{
     const classes = useStyles();
     return(
         <div className={classes.recordedThaughtsWrapper}>
-            <Container maxWidth="lg">
-                <Box pt={5} pb={5}>
-                    <Heading heading="I Record" heading2="My Thoughts" start="true" textAlign="center" />
-                    <Typography variant="p" mt={2} component="p" align='center'>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                    </Typography>
-                </Box>
-                <ThaughtsCarousel />
-            </Container>
+            <Grid
+                container
+                spacing={0}
+                direction="column"
+                alignItems="center"
+                justify="center"
+            >
+                <Grid xs={12} sm={10} lg={6}>
+                    <Box pt={5} pb={5}>
+                        <Heading heading="I Record" heading2="My Thoughts" start="true" textAlign="center" />
+                        <Typography variant="p" mt={2} component="p" align='center'>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                        </Typography>
+                    </Box>
+                </Grid>
+                <Grid xs={12}>
+                    <Container>
+                        <ThaughtsCarousel />
+                    </Container>
+                </Grid>
+            </Grid>
         </div>
     )
 }
