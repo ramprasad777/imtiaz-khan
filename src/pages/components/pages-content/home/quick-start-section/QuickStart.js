@@ -27,7 +27,7 @@ function QuickStart(){
                         <Grid item xs={12} sm={4} order={{ xs: 2, sm:1}}>
                             <Image
                                 className=""
-                                src="/images/home/about/about-me.png"
+                                src="/images/home/quick-start-expert.png"
                                 alt="Main Banner"
                                 layout="responsive" objectFit="contain"
                                 width='100'

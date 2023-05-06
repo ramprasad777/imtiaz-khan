@@ -27,7 +27,7 @@ const FreeGift = () =>{
                         <Grid item xs={12} sm={5}>
                             <Image
                                 className="banner-image"
-                                src="/images/home/dotted-bg.svg"
+                                src="/images/home/free-gift.png"
                                 alt="Main Banner"
                                 layout="responsive"
                                 width='100'

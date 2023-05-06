@@ -38,7 +38,7 @@ const useStyle = makeStyles((theme) => ({
     submitBtn: {
         // margin: theme.spacing(1),
         margin:'8px',
-        background:'#62ADEC',
+        background:'#1565c0',
         color:'#fff',
         borderRadius:'5px',
         '&.Mui-disabled':{
@@ -153,7 +153,7 @@ const GiftForm = () => {
                     </Grid>
                   </CardContent>
                   <CardActions>
-                    <span>
+                    <span className="customCheckbox" >
                         <Checkbox defaultChecked />
                         I want to subscribe for weekly newsletter
                     </span>
