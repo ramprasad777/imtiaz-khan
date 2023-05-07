@@ -14,6 +14,35 @@ a{
     align-items: center;
     text-decoration: none;
 }
+.servicesWrapper div{
+    display:inline-table;
+}
+.servicesWrapper div:nth-child(even) .servicesBlock{
+    background: rgb(7,5,5);
+    background: linear-gradient(180deg, rgba(7,5,5,1) 0%, rgba(3,77,119,1) 100%);
+}
+.servicesWrapper div:nth-child(odd) .servicesBlock{
+    border:1px solid #3BA5E0;
+}
+.servicesWrapper .servicesBlock{
+    text-align:center;
+    border-radius:10px;
+    padding: 20px;
+    display: table-cell;
+}
+.servicesWrapper .servicesBlock img{
+    width:70px;
+    height:auto;
+    max-height:70px;
+    filter: invert(0.4) sepia(1) saturate(20) hue-rotate(187.2deg) brightness(1.2);
+}
+.servicesWrapper .servicesBlock:hover{
+    background:#3BA5E0!important;
+    color:#fff;
+}
+.servicesWrapper .servicesBlock:hover img{
+    filter: invert(72%) sepia(30%) saturate(6808%) hue-rotate(-73deg) brightness(9%) contrast(84%);
+}
 
 @media (max-width: 600px){
     .menu-icon{

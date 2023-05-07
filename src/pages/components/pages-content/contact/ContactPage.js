@@ -1,10 +1,10 @@
 import { makeStyles } from '@mui/styles';
-import RecordedThaughts from "../home/my-thaughts/RecordedThaughts";
 import Image from 'next/image';
-import { Typography, Grid, Container } from '@mui/material';
+import { Typography, Grid, Container, Box } from '@mui/material';
+import InnerContactForm from './InnerContactForm';
 
 const useStyles = makeStyles({
-    mainVideoPage:{
+    mainContactPage:{
         background: '#061823',
         backgroundSize: 'auto',
         color:'#fff',
@@ -14,9 +14,9 @@ const useStyles = makeStyles({
             maxHeight:'400px'
         },
         '& .banner-container':{
-            background:`url('/images/videos/video-banner.png') no-repeat right top #000`,
+            background:`url('/images/services/services-banner.png') no-repeat right top #000`,
             backgroundSize:'contain',
-            minHeight:'300px',
+            minHeight:'270px',
             position:'relative',
             '& .banner-wrapper':{
                 position:'absolute',
@@ -25,36 +25,30 @@ const useStyles = makeStyles({
             },
             '& .banner-heading':{
                 fontSize:'48px',
-                fontWeight:'600',
+                fontWeight:'600'
             }
         }
     }
 })
-const VideosPage = () =>{
+const ContactPage = () =>{
     const classes = useStyles();
     return(
-        <div className={classes.mainVideoPage}>
+        <div className={classes.mainContactPage}>
             <div className="banner-container">
                 <Container>
                     <div className="banner-wrapper">
-                        {/* <Image
-                            className="banner-image"
-                            src="/images/videos/video-banner.png"
-                            alt="Main Banner"
-                            layout="responsive"
-                            width='100'
-                            height='100'
-                            sizes='auto'
-                            priority
-                        /> */}
                         <Typography variant="h1" component="h1" align='center' className="banner-heading">
-                            I Record My Thoughts
+                            Contact page
                         </Typography>
                     </div>
                 </Container>
             </div>
-            <RecordedThaughts />
+            <Container maxWidth="lg">
+                <Box pt={5} pb={5}>
+                    <InnerContactForm />
+                </Box>
+            </Container>
         </div>
     )
 }
-export default VideosPage;
+export default ContactPage;
